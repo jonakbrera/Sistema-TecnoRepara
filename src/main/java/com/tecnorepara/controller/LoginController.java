@@ -8,6 +8,7 @@ import com.tecnorepara.validation.ValidatorUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -17,14 +18,41 @@ public class LoginController {
 
     @FXML private TextField txtUsuario;
     @FXML private PasswordField txtPassword;
+    @FXML private TextField txtPasswordVisible;
+    @FXML private Button btnVerPassword;
     @FXML private Label lblMensaje;
 
     private final UsuarioDAO usuarioDAO = new UsuarioDAO();
+    private boolean passwordVisible = false;
+
+    @FXML
+    public void initialize() {
+        txtUsuario.setOnAction(event -> iniciarSesion());
+        txtPassword.setOnAction(event -> iniciarSesion());
+        txtPasswordVisible.setOnAction(event -> iniciarSesion());
+
+        txtPasswordVisible.textProperty().bindBidirectional(txtPassword.textProperty());
+    }
+
+    @FXML
+    private void alternarPassword() {
+        passwordVisible = !passwordVisible;
+
+        txtPasswordVisible.setVisible(passwordVisible);
+        txtPasswordVisible.setManaged(passwordVisible);
+
+        txtPassword.setVisible(!passwordVisible);
+        txtPassword.setManaged(!passwordVisible);
+
+        btnVerPassword.setText(passwordVisible ? "🙈" : "👁");
+    }
 
     @FXML
     private void iniciarSesion() {
         String usuarioTexto = txtUsuario.getText().trim();
         String passwordTexto = txtPassword.getText().trim();
+
+        lblMensaje.setText("");
 
         if (ValidatorUtil.estaVacio(usuarioTexto) || ValidatorUtil.estaVacio(passwordTexto)) {
             lblMensaje.setText("Ingrese usuario y contraseña.");
@@ -35,6 +63,9 @@ public class LoginController {
 
         if (usuario == null) {
             lblMensaje.setText("Usuario o contraseña incorrectos.");
+            txtPassword.clear();
+            txtPasswordVisible.clear();
+            txtPassword.requestFocus();
             return;
         }
 

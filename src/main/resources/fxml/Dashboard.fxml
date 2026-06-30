@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tecnorepara.controller.DashboardController"
+      spacing="20"
+      styleClass="module-page">
+
+    <padding>
+        <Insets top="5" right="5" bottom="5" left="5"/>
+    </padding>
+
+    <HBox spacing="18">
+        <VBox styleClass="stat-card">
+            <Label text="Clientes" styleClass="stat-label"/>
+            <Label fx:id="lblClientes" text="0" styleClass="stat-value"/>
+        </VBox>
+
+        <VBox styleClass="stat-card">
+            <Label text="Productos" styleClass="stat-label"/>
+            <Label fx:id="lblProductos" text="0" styleClass="stat-value"/>
+        </VBox>
+
+        <VBox styleClass="stat-card">
+            <Label text="Ventas hoy" styleClass="stat-label"/>
+            <Label fx:id="lblVentasHoy" text="Gs. 0" styleClass="stat-value"/>
+        </VBox>
+
+        <VBox styleClass="stat-card">
+            <Label text="Stock bajo" styleClass="stat-label"/>
+            <Label fx:id="lblStockBajo" text="0" styleClass="stat-value warning"/>
+        </VBox>
+    </HBox>
+
+    <VBox styleClass="panel" spacing="12">
+        <Label text="Actividad reciente" styleClass="section-title"/>
+
+        <TableView prefHeight="320" styleClass="modern-table">
+            <columns>
+                <TableColumn text="Fecha" prefWidth="170"/>
+                <TableColumn text="Módulo" prefWidth="180"/>
+                <TableColumn text="Detalle" prefWidth="430"/>
+                <TableColumn text="Usuario" prefWidth="180"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>

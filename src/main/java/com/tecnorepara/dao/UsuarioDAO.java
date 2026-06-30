@@ -37,7 +37,7 @@ public class UsuarioDAO extends BaseDAO {
             }
 
         } catch (Exception e) {
-            System.out.println("Error al validar login: " + e.getMessage());
+            com.tecnorepara.util.LoggerUtil.error("Error al validar login", e);
         }
 
         return null;

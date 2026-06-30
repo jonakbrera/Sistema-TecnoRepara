@@ -25,11 +25,6 @@
                     </VBox>
 
                     <VBox alignment="CENTER" spacing="10">
-                        <Label text="🧾" styleClass="feature-icon"/>
-                        <Label text="Compras" styleClass="feature-text"/>
-                    </VBox>
-
-                    <VBox alignment="CENTER" spacing="10">
                         <Label text="🛒" styleClass="feature-icon"/>
                         <Label text="Ventas" styleClass="feature-text"/>
                     </VBox>
@@ -63,9 +58,24 @@
                            styleClass="login-input"/>
 
                 <Label text="Contraseña" styleClass="login-label"/>
-                <PasswordField fx:id="txtPassword"
+
+                <StackPane>
+                    <PasswordField fx:id="txtPassword"
+                                   promptText="Ingrese su contraseña"
+                                   styleClass="login-input"/>
+
+                    <TextField fx:id="txtPasswordVisible"
                                promptText="Ingrese su contraseña"
+                               visible="false"
+                               managed="false"
                                styleClass="login-input"/>
+
+                    <Button fx:id="btnVerPassword"
+                            text="👁"
+                            onAction="#alternarPassword"
+                            styleClass="btn-eye"
+                            StackPane.alignment="CENTER_RIGHT"/>
+                </StackPane>
 
                 <HBox>
                     <CheckBox text="Recordar usuario" styleClass="login-check"/>
@@ -82,7 +92,6 @@
                 <Region VBox.vgrow="ALWAYS"/>
 
                 <Label text="🛡 Acceso seguro y protegido" styleClass="secure-text"/>
-
                 <Label text="TecnoRepara v1.0  •  2026" styleClass="login-version"/>
             </VBox>
 

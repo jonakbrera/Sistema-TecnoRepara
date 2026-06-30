@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import com.tecnorepara.security.PermisoUtil;
 
 public class MenuPrincipalController {
 
@@ -42,29 +43,23 @@ public class MenuPrincipalController {
 
     @FXML
     private void cargarDashboard() {
-        lblTitulo.setText("Dashboard");
-        lblSubtitulo.setText("Resumen general del sistema");
-
-        VBox dashboard = new VBox(15);
-        dashboard.getStyleClass().add("panel");
-
-        Label titulo = new Label("Bienvenido a TecnoRepara");
-        titulo.getStyleClass().add("section-title");
-
-        Label texto = new Label("Desde este panel se administran usuarios, clientes, productos, inventario, compras, ventas y reportes.");
-        texto.getStyleClass().add("normal-text");
-
-        dashboard.getChildren().addAll(titulo, texto);
-        contenedorPrincipal.getChildren().setAll(dashboard);
+        if (!verificarPermiso("DASHBOARD")) return;
+        cargarFXML(
+                "/fxml/Dashboard.fxml",
+                "Dashboard",
+                "Resumen general del sistema"
+        );
     }
 
     @FXML
     private void cargarUsuarios() {
+        if (!verificarPermiso("USUARIOS")) return;
         cargarModuloTemporal("Gestión de Usuarios", "Administrar usuarios, roles y accesos del sistema.");
     }
 
     @FXML
     private void cargarClientes() {
+        if (!verificarPermiso("CLIENTES")) return;
         cargarFXML(
                 "/fxml/Clientes.fxml",
                 "Registro de Clientes",
@@ -74,26 +69,31 @@ public class MenuPrincipalController {
 
     @FXML
     private void cargarProductos() {
+        if (!verificarPermiso("PRODUCTOS")) return;
         cargarModuloTemporal("Gestión de Productos", "Administrar productos, precios, categorías y estado.");
     }
 
     @FXML
     private void cargarInventario() {
+        if (!verificarPermiso("INVENTARIO")) return;
         cargarModuloTemporal("Gestión de Inventario", "Controlar stock, movimientos y alertas de inventario.");
     }
 
     @FXML
     private void cargarCompras() {
+        if (!verificarPermiso("COMPRAS")) return;
         cargarModuloTemporal("Compras", "Registrar compras, proveedores y actualización de stock.");
     }
 
     @FXML
     private void cargarVentas() {
+        if (!verificarPermiso("VENTAS")) return;
         cargarModuloTemporal("Ventas", "Registrar ventas, detalles, totales y métodos de pago.");
     }
 
     @FXML
     private void cargarReportes() {
+        if (!verificarPermiso("REPORTES")) return;
         cargarModuloTemporal("Reportes", "Visualizar reportes, estadísticas y movimientos del sistema.");
     }
 
@@ -142,5 +142,13 @@ public class MenuPrincipalController {
 
         modulo.getChildren().addAll(titulo, texto);
         contenedorPrincipal.getChildren().setAll(modulo);
+    }
+
+    private boolean verificarPermiso(String modulo) {
+        if (!PermisoUtil.puedeAcceder(modulo)) {
+            AlertUtil.advertencia("No tiene permisos para acceder a este módulo.");
+            return false;
+        }
+        return true;
     }
 }

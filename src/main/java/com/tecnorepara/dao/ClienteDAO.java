@@ -35,7 +35,7 @@ public class ClienteDAO extends BaseDAO {
             }
 
         } catch (SQLException e) {
-            System.out.println("Error al listar clientes: " + e.getMessage());
+            com.tecnorepara.util.LoggerUtil.error("Error al listar clientes", e);
         }
 
         return clientes;
@@ -60,7 +60,7 @@ public class ClienteDAO extends BaseDAO {
             return stmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            System.out.println("Error al insertar cliente: " + e.getMessage());
+            com.tecnorepara.util.LoggerUtil.error("Error al insertar cliente", e);
             return false;
         }
     }
@@ -86,7 +86,7 @@ public class ClienteDAO extends BaseDAO {
             return stmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            System.out.println("Error al actualizar cliente: " + e.getMessage());
+            com.tecnorepara.util.LoggerUtil.error("Error al actualizar cliente", e);
             return false;
         }
     }
@@ -101,7 +101,7 @@ public class ClienteDAO extends BaseDAO {
             return stmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            System.out.println("Error al eliminar cliente: " + e.getMessage());
+            com.tecnorepara.util.LoggerUtil.error("Error al eliminar cliente", e);
             return false;
         }
     }
