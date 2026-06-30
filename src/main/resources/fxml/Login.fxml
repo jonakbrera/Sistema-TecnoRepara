@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tecnorepara.controller.LoginController"
+            styleClass="login-root">
+
+    <center>
+        <HBox styleClass="login-main">
+
+            <VBox styleClass="login-left" spacing="28">
+                <Label text="TecnoRepara ⚙" styleClass="login-brand-title"/>
+
+                <Label text="Sistema integral para la gestión de reparaciones, clientes, ventas e inventario."
+                       wrapText="true"
+                       styleClass="login-brand-description"/>
+
+                <HBox spacing="35" styleClass="login-features">
+                    <VBox alignment="CENTER" spacing="10">
+                        <Label text="👥" styleClass="feature-icon"/>
+                        <Label text="Clientes" styleClass="feature-text"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10">
+                        <Label text="🧾" styleClass="feature-icon"/>
+                        <Label text="Compras" styleClass="feature-text"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10">
+                        <Label text="🛒" styleClass="feature-icon"/>
+                        <Label text="Ventas" styleClass="feature-text"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10">
+                        <Label text="📦" styleClass="feature-icon"/>
+                        <Label text="Inventario" styleClass="feature-text"/>
+                    </VBox>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <Label text="JavaFX  •  PostgreSQL  •  Maven"
+                       styleClass="login-tech"/>
+            </VBox>
+
+            <VBox styleClass="login-right" spacing="18">
+                <padding>
+                    <Insets top="75" right="80" bottom="50" left="80"/>
+                </padding>
+
+                <Label text="Bienvenido" styleClass="login-title"/>
+                <Label text="━" styleClass="login-line"/>
+                <Label text="Iniciá sesión para continuar" styleClass="login-subtitle"/>
+
+                <Region prefHeight="12"/>
+
+                <Label text="Usuario" styleClass="login-label"/>
+                <TextField fx:id="txtUsuario"
+                           promptText="Ingrese su usuario"
+                           styleClass="login-input"/>
+
+                <Label text="Contraseña" styleClass="login-label"/>
+                <PasswordField fx:id="txtPassword"
+                               promptText="Ingrese su contraseña"
+                               styleClass="login-input"/>
+
+                <HBox>
+                    <CheckBox text="Recordar usuario" styleClass="login-check"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="¿Olvidaste tu contraseña?" styleClass="forgot-link"/>
+                </HBox>
+
+                <Button text="↪  Iniciar sesión"
+                        onAction="#iniciarSesion"
+                        styleClass="login-button"/>
+
+                <Label fx:id="lblMensaje" text="" styleClass="login-message"/>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <Label text="🛡 Acceso seguro y protegido" styleClass="secure-text"/>
+
+                <Label text="TecnoRepara v1.0  •  2026" styleClass="login-version"/>
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>

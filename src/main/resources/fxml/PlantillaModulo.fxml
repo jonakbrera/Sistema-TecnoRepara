@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      spacing="18"
+      styleClass="module-page">
+
+    <padding>
+        <Insets top="5" right="5" bottom="5" left="5"/>
+    </padding>
+
+    <!-- CABECERA DEL MÓDULO -->
+    <VBox spacing="4">
+        <Label text="Nombre del Módulo" styleClass="module-title"/>
+        <Label text="Descripción breve del módulo" styleClass="module-subtitle"/>
+    </VBox>
+
+    <!-- BUSCADOR Y BOTONES SUPERIORES -->
+    <HBox spacing="10" styleClass="toolbar">
+        <TextField promptText="Buscar..." styleClass="input-search" HBox.hgrow="ALWAYS"/>
+
+        <Button text="🔍 Buscar" styleClass="btn-secondary"/>
+        <Button text="➕ Nuevo" styleClass="btn-primary"/>
+        <Button text="🔄 Actualizar" styleClass="btn-secondary"/>
+    </HBox>
+
+    <!-- FORMULARIO -->
+    <VBox styleClass="form-card" spacing="14">
+        <Label text="Datos del registro" styleClass="section-title"/>
+
+        <GridPane hgap="15" vgap="12">
+
+            <Label text="Campo 1:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="form-label"/>
+            <TextField promptText="Ingrese campo 1" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="input"/>
+
+            <Label text="Campo 2:" GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="form-label"/>
+            <TextField promptText="Ingrese campo 2" GridPane.rowIndex="0" GridPane.columnIndex="3" styleClass="input"/>
+
+            <Label text="Campo 3:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="form-label"/>
+            <TextField promptText="Ingrese campo 3" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="input"/>
+
+            <Label text="Campo 4:" GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="form-label"/>
+            <TextField promptText="Ingrese campo 4" GridPane.rowIndex="1" GridPane.columnIndex="3" styleClass="input"/>
+
+        </GridPane>
+
+        <HBox spacing="10">
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="💾 Guardar" styleClass="btn-success"/>
+            <Button text="✏️ Editar" styleClass="btn-warning"/>
+            <Button text="🗑 Eliminar" styleClass="btn-danger"/>
+            <Button text="🧹 Limpiar" styleClass="btn-secondary"/>
+        </HBox>
+    </VBox>
+
+    <!-- TABLA -->
+    <VBox styleClass="table-card" spacing="12">
+        <Label text="Listado de registros" styleClass="section-title"/>
+
+        <TableView styleClass="modern-table" prefHeight="320">
+            <columns>
+                <TableColumn text="ID" prefWidth="80"/>
+                <TableColumn text="Campo 1" prefWidth="180"/>
+                <TableColumn text="Campo 2" prefWidth="180"/>
+                <TableColumn text="Campo 3" prefWidth="180"/>
+                <TableColumn text="Estado" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>
