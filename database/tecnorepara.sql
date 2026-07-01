@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict YfsC6UzOdBA6MKvcTBaF49uEoGQ785TAjaBdqrfMJsBaVAynfuqxWlP9uOxlav9
+\restrict zBCjcyQTi8aFYyO187tKnbobPdtDHyScw3HyiyBqsy6hpuPd9yl7crniWKb1CKc
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.3
 
--- Started on 2026-06-30 19:01:41
+-- Started on 2026-06-30 22:44:19
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -57,7 +57,7 @@ CREATE SEQUENCE public.categorias_id_categoria_seq
 ALTER SEQUENCE public.categorias_id_categoria_seq OWNER TO postgres;
 
 --
--- TOC entry 5178 (class 0 OID 0)
+-- TOC entry 5154 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: categorias_id_categoria_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -101,7 +101,7 @@ CREATE SEQUENCE public.clientes_id_cliente_seq
 ALTER SEQUENCE public.clientes_id_cliente_seq OWNER TO postgres;
 
 --
--- TOC entry 5179 (class 0 OID 0)
+-- TOC entry 5155 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: clientes_id_cliente_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -144,7 +144,7 @@ CREATE SEQUENCE public.compras_id_compra_seq
 ALTER SEQUENCE public.compras_id_compra_seq OWNER TO postgres;
 
 --
--- TOC entry 5180 (class 0 OID 0)
+-- TOC entry 5156 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: compras_id_compra_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -189,7 +189,7 @@ CREATE SEQUENCE public.detalle_compras_id_detalle_compra_seq
 ALTER SEQUENCE public.detalle_compras_id_detalle_compra_seq OWNER TO postgres;
 
 --
--- TOC entry 5181 (class 0 OID 0)
+-- TOC entry 5157 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: detalle_compras_id_detalle_compra_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -234,7 +234,7 @@ CREATE SEQUENCE public.detalle_ventas_id_detalle_venta_seq
 ALTER SEQUENCE public.detalle_ventas_id_detalle_venta_seq OWNER TO postgres;
 
 --
--- TOC entry 5182 (class 0 OID 0)
+-- TOC entry 5158 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: detalle_ventas_id_detalle_venta_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -275,7 +275,7 @@ CREATE SEQUENCE public.inventario_id_inventario_seq
 ALTER SEQUENCE public.inventario_id_inventario_seq OWNER TO postgres;
 
 --
--- TOC entry 5183 (class 0 OID 0)
+-- TOC entry 5159 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: inventario_id_inventario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -319,7 +319,7 @@ CREATE SEQUENCE public.movimientos_inventario_id_movimiento_seq
 ALTER SEQUENCE public.movimientos_inventario_id_movimiento_seq OWNER TO postgres;
 
 --
--- TOC entry 5184 (class 0 OID 0)
+-- TOC entry 5160 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: movimientos_inventario_id_movimiento_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -367,7 +367,7 @@ CREATE SEQUENCE public.productos_id_producto_seq
 ALTER SEQUENCE public.productos_id_producto_seq OWNER TO postgres;
 
 --
--- TOC entry 5185 (class 0 OID 0)
+-- TOC entry 5161 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: productos_id_producto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -410,7 +410,7 @@ CREATE SEQUENCE public.proveedores_id_proveedor_seq
 ALTER SEQUENCE public.proveedores_id_proveedor_seq OWNER TO postgres;
 
 --
--- TOC entry 5186 (class 0 OID 0)
+-- TOC entry 5162 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: proveedores_id_proveedor_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -448,7 +448,7 @@ CREATE SEQUENCE public.roles_id_rol_seq
 ALTER SEQUENCE public.roles_id_rol_seq OWNER TO postgres;
 
 --
--- TOC entry 5187 (class 0 OID 0)
+-- TOC entry 5163 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: roles_id_rol_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -491,7 +491,7 @@ CREATE SEQUENCE public.usuarios_id_usuario_seq
 ALTER SEQUENCE public.usuarios_id_usuario_seq OWNER TO postgres;
 
 --
--- TOC entry 5188 (class 0 OID 0)
+-- TOC entry 5164 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: usuarios_id_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -535,7 +535,7 @@ CREATE SEQUENCE public.ventas_id_venta_seq
 ALTER SEQUENCE public.ventas_id_venta_seq OWNER TO postgres;
 
 --
--- TOC entry 5189 (class 0 OID 0)
+-- TOC entry 5165 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: ventas_id_venta_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -637,238 +637,6 @@ ALTER TABLE ONLY public.usuarios ALTER COLUMN id_usuario SET DEFAULT nextval('pu
 --
 
 ALTER TABLE ONLY public.ventas ALTER COLUMN id_venta SET DEFAULT nextval('public.ventas_id_venta_seq'::regclass);
-
-
---
--- TOC entry 5158 (class 0 OID 25091)
--- Dependencies: 228
--- Data for Name: categorias; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.categorias (id_categoria, nombre_categoria, descripcion, estado) FROM stdin;
-\.
-
-
---
--- TOC entry 5154 (class 0 OID 25066)
--- Dependencies: 224
--- Data for Name: clientes; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.clientes (id_cliente, nombre, documento, telefono, email, direccion, estado, fecha_registro) FROM stdin;
-1	Jonathan Cabrera	4780121	0985420171	jonakbrera17@gmail.com	Asunción	f	2026-06-30 17:30:11.170084
-\.
-
-
---
--- TOC entry 5164 (class 0 OID 25151)
--- Dependencies: 234
--- Data for Name: compras; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.compras (id_compra, id_proveedor, id_usuario, fecha_compra, total, estado) FROM stdin;
-\.
-
-
---
--- TOC entry 5166 (class 0 OID 25175)
--- Dependencies: 236
--- Data for Name: detalle_compras; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.detalle_compras (id_detalle_compra, id_compra, id_producto, cantidad, precio_unitario, subtotal) FROM stdin;
-\.
-
-
---
--- TOC entry 5170 (class 0 OID 25226)
--- Dependencies: 240
--- Data for Name: detalle_ventas; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.detalle_ventas (id_detalle_venta, id_venta, id_producto, cantidad, precio_unitario, subtotal) FROM stdin;
-\.
-
-
---
--- TOC entry 5162 (class 0 OID 25132)
--- Dependencies: 232
--- Data for Name: inventario; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.inventario (id_inventario, id_producto, stock_actual, fecha_actualizacion) FROM stdin;
-\.
-
-
---
--- TOC entry 5172 (class 0 OID 25252)
--- Dependencies: 242
--- Data for Name: movimientos_inventario; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.movimientos_inventario (id_movimiento, id_producto, tipo_movimiento, cantidad, motivo, fecha_movimiento, id_usuario) FROM stdin;
-\.
-
-
---
--- TOC entry 5160 (class 0 OID 25105)
--- Dependencies: 230
--- Data for Name: productos; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.productos (id_producto, codigo, nombre, descripcion, id_categoria, precio_compra, precio_venta, stock_minimo, estado) FROM stdin;
-\.
-
-
---
--- TOC entry 5156 (class 0 OID 25079)
--- Dependencies: 226
--- Data for Name: proveedores; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.proveedores (id_proveedor, nombre, ruc, telefono, email, direccion, estado) FROM stdin;
-\.
-
-
---
--- TOC entry 5150 (class 0 OID 25034)
--- Dependencies: 220
--- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.roles (id_rol, nombre_rol) FROM stdin;
-1	ADMINISTRADOR
-2	EMPLEADO
-\.
-
-
---
--- TOC entry 5152 (class 0 OID 25045)
--- Dependencies: 222
--- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.usuarios (id_usuario, nombre, usuario, password, id_rol, estado, fecha_creacion) FROM stdin;
-1	Administrador General	admin	1234	1	t	2026-06-30 17:02:54.341377
-\.
-
-
---
--- TOC entry 5168 (class 0 OID 25201)
--- Dependencies: 238
--- Data for Name: ventas; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.ventas (id_venta, id_cliente, id_usuario, fecha_venta, total, metodo_pago, estado) FROM stdin;
-\.
-
-
---
--- TOC entry 5190 (class 0 OID 0)
--- Dependencies: 227
--- Name: categorias_id_categoria_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.categorias_id_categoria_seq', 1, false);
-
-
---
--- TOC entry 5191 (class 0 OID 0)
--- Dependencies: 223
--- Name: clientes_id_cliente_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.clientes_id_cliente_seq', 2, true);
-
-
---
--- TOC entry 5192 (class 0 OID 0)
--- Dependencies: 233
--- Name: compras_id_compra_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.compras_id_compra_seq', 1, false);
-
-
---
--- TOC entry 5193 (class 0 OID 0)
--- Dependencies: 235
--- Name: detalle_compras_id_detalle_compra_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.detalle_compras_id_detalle_compra_seq', 1, false);
-
-
---
--- TOC entry 5194 (class 0 OID 0)
--- Dependencies: 239
--- Name: detalle_ventas_id_detalle_venta_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.detalle_ventas_id_detalle_venta_seq', 1, false);
-
-
---
--- TOC entry 5195 (class 0 OID 0)
--- Dependencies: 231
--- Name: inventario_id_inventario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.inventario_id_inventario_seq', 1, false);
-
-
---
--- TOC entry 5196 (class 0 OID 0)
--- Dependencies: 241
--- Name: movimientos_inventario_id_movimiento_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.movimientos_inventario_id_movimiento_seq', 1, false);
-
-
---
--- TOC entry 5197 (class 0 OID 0)
--- Dependencies: 229
--- Name: productos_id_producto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.productos_id_producto_seq', 1, false);
-
-
---
--- TOC entry 5198 (class 0 OID 0)
--- Dependencies: 225
--- Name: proveedores_id_proveedor_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.proveedores_id_proveedor_seq', 1, false);
-
-
---
--- TOC entry 5199 (class 0 OID 0)
--- Dependencies: 219
--- Name: roles_id_rol_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.roles_id_rol_seq', 2, true);
-
-
---
--- TOC entry 5200 (class 0 OID 0)
--- Dependencies: 221
--- Name: usuarios_id_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.usuarios_id_usuario_seq', 1, true);
-
-
---
--- TOC entry 5201 (class 0 OID 0)
--- Dependencies: 237
--- Name: ventas_id_venta_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.ventas_id_venta_seq', 1, false);
 
 
 --
@@ -1159,11 +927,11 @@ ALTER TABLE ONLY public.ventas
     ADD CONSTRAINT ventas_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES public.usuarios(id_usuario);
 
 
--- Completed on 2026-06-30 19:01:41
+-- Completed on 2026-06-30 22:44:19
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict YfsC6UzOdBA6MKvcTBaF49uEoGQ785TAjaBdqrfMJsBaVAynfuqxWlP9uOxlav9
+\unrestrict zBCjcyQTi8aFYyO187tKnbobPdtDHyScw3HyiyBqsy6hpuPd9yl7crniWKb1CKc
 
